@@ -33,6 +33,5 @@ public abstract class Article {
 		this.unitPrice = price;
 	}
 
-	@Override
-	public abstract String toString();
+	public abstract String getArticleInformation();
 }

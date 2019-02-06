@@ -19,9 +19,9 @@ public class Flower extends Article {
     }
 
     @Override
-    public String toString() {
+    public String getArticleInformation() {
         return (getName() + " de color " + color + ": "
-                + Integer.toString(getQuantity()) + " unitats a "
-                + Double.toString(getPrice())+" cadascuna");
+                + getQuantity() + " unitats a "
+                + getPrice()+" cadascuna");
     }
 }

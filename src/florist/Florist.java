@@ -15,7 +15,7 @@ public class Florist {
 		return name;
 	}
 	public void setName(String name) throws Exception{
-		if(name == null || name.equals("")) throw new Exception("El nom de la floristeria és incorrecte.");
+		if(name == null || name.equals("")) throw new Exception("El nom de la floristeria ï¿½s incorrecte.");
 		this.name = name;
 	}
 	
@@ -40,7 +40,7 @@ public class Florist {
 		String sFlowers = "Flors:\n";
 		for(Article art : stock) {
 			if(art instanceof Flower) {
-				sFlowers = sFlowers + "\t- " + art.toString() + "\n";
+				sFlowers = sFlowers + "\t- " + art.getArticleInformation() + "\n";
 			}
 		}
 		return sFlowers;
@@ -49,16 +49,16 @@ public class Florist {
 		String sTrees = "Arbres:\n";
 		for(Article art : stock) {
 			if(art instanceof Tree) {
-				sTrees = sTrees + "\t- " + art.toString() + "\n";
+				sTrees = sTrees + "\t- " + art.getArticleInformation() + "\n";
 			}
 		}
 		return sTrees;
 	}
 	public String printDecor() {
-		String sDecor = "Decoració:\n";
+		String sDecor = "Decoraciï¿½:\n";
 		for(Article art : stock) {
 			if(art instanceof Decoration) {
-				sDecor = sDecor + "\t- " + art.toString() + "\n";
+				sDecor = sDecor + "\t- " + art.getArticleInformation() + "\n";
 			}
 		}
 		return sDecor;
@@ -66,14 +66,14 @@ public class Florist {
 	public String printStock() {
 		String sTrees = "Arbres:\n";
 		String sFlowers = "Flors:\n";
-		String sDecor = "Decoració:\n";
+		String sDecor = "Decoraciï¿½:\n";
 		for(Article art :stock) {
 			if(art instanceof Tree) {
-				sTrees = sTrees + "\t- " + art.toString() + "\n";
+				sTrees = sTrees + "\t- " + art.getArticleInformation() + "\n";
 			} else if(art instanceof Flower) {
-				sFlowers = sFlowers + "\t- " + art.toString() + "\n";
+				sFlowers = sFlowers + "\t- " + art.getArticleInformation() + "\n";
 			} else if(art instanceof Decoration){
-				sDecor = sDecor + "\t- " + art.toString() + "\n";
+				sDecor = sDecor + "\t- " + art.getArticleInformation() + "\n";
 			}
 		}
 		return "Stock de la floristeria \"" + name + "\":\n" + sTrees + sFlowers + sDecor;

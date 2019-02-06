@@ -14,15 +14,15 @@ public class Tree extends Article {
     }
 
     public void setHeight(Double height) throws Exception{
-    	if(height <= 0) throw new Exception("l'alçada es incorrecta");
+    	if(height <= 0) throw new Exception("l'alsada es incorrecta");
         this.height = height;
     }
 
     @Override
-    public String toString() {
-        return (getName() + " d'una alçada " + height + ": "
-                + Integer.toString(getQuantity()) + " unitats a "
-                + Double.toString(getPrice())+" cadascuna");
+    public String getArticleInformation() {
+        return (getName() + " d'una alsada " + height + ": "
+                + getQuantity() + " unitats a "
+                + getPrice()+" cadascuna");
     }
 }
 
