@@ -6,6 +6,7 @@ public class Tree extends Article {
 
     public Tree(String name, int quantity, double price, double height) throws Exception{
         super(name, quantity, price);
+        if(height <= 0) throw new Exception("l'alçada es incorrecta");
         this.height = height;
     }
 
