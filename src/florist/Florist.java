@@ -23,7 +23,8 @@ public class Florist {
 	public void addArticle(Article article) throws Exception {
 		int i = findArticle(article);
 		if(i != -1) {
-			stock.get(i).setQuantity(stock.get(i).getQuantity()+article.getQuantity());
+			int newQuantity = stock.get(i).getQuantity()+article.getQuantity();
+			stock.get(i).setQuantity(newQuantity);
 		} else {
 			stock.add(article);
 		}
@@ -36,48 +37,31 @@ public class Florist {
 		}
 		return -1;
 	}
-	public String printFlowers() {
-		String sFlowers = "Flors:\n";
+	public List<Flower> getFlowers(){
+		List<Flower> flowerList = new ArrayList<>();
 		for(Article art : stock) {
 			if(art instanceof Flower) {
-				sFlowers = sFlowers + "\t- " + art.getArticleInformation() + "\n";
+				flowerList.add((Flower)art);
 			}
 		}
-		return sFlowers;
+		return flowerList;
 	}
-	public String printTrees() {
-		String sTrees = "Arbres:\n";
+	public List<Tree> getTrees(){
+		List<Tree> treeList = new ArrayList<>();
 		for(Article art : stock) {
 			if(art instanceof Tree) {
-				sTrees = sTrees + "\t- " + art.getArticleInformation() + "\n";
+				treeList.add((Tree)art);
 			}
 		}
-		return sTrees;
+		return treeList;
 	}
-	public String printDecor() {
-		String sDecor = "Decoraci�:\n";
+	public List<Decoration> getDecoration(){
+		List<Decoration> decorationList = new ArrayList<>();
 		for(Article art : stock) {
 			if(art instanceof Decoration) {
-				sDecor = sDecor + "\t- " + art.getArticleInformation() + "\n";
+				decorationList.add((Decoration)art);
 			}
 		}
-		return sDecor;
+		return decorationList;
 	}
-	public String printStock() {
-		String sTrees = "Arbres:\n";
-		String sFlowers = "Flors:\n";
-		String sDecor = "Decoraci�:\n";
-		for(Article art :stock) {
-			if(art instanceof Tree) {
-				sTrees = sTrees + "\t- " + art.getArticleInformation() + "\n";
-			} else if(art instanceof Flower) {
-				sFlowers = sFlowers + "\t- " + art.getArticleInformation() + "\n";
-			} else if(art instanceof Decoration){
-				sDecor = sDecor + "\t- " + art.getArticleInformation() + "\n";
-			}
-		}
-		return "Stock de la floristeria \"" + name + "\":\n" + sTrees + sFlowers + sDecor;
-	}
-	
-
 }

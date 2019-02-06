@@ -20,7 +20,7 @@ public class Flower extends Article {
 
     @Override
     public String getArticleInformation() {
-        return (getName() + " de color " + color + ": "
+        return (getName() + " de color " + color.toLowerCase() + ": "
                 + getQuantity() + " unitats a "
                 + getPrice()+" cadascuna");
     }
